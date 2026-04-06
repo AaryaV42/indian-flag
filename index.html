@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Flag - CSS Only</title>
+    <style>
+        :root {
+            /* Flag Proportions: 3:2 Ratio */
+            --FLAG-HEIGHT: min(400px, 60vw);
+            --FLAG-WIDTH: calc(var(--FLAG-HEIGHT) * 1.5);
+            --STRIPE-HEIGHT: calc(var(--FLAG-HEIGHT) / 3);
+            
+            /* Official Colors */
+            --SAFFRON: #FF9933;
+            --WHITE: #FFFFFF;
+            --GREEN: #138808;
+            --NAVY-BLUE: #000080;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .flag {
+            width: var(--FLAG-WIDTH);
+            height: var(--FLAG-HEIGHT);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .saffron { background-color: var(--SAFFRON); flex: 1; }
+        .white { 
+            background-color: var(--WHITE); 
+            flex: 1; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .green { background-color: var(--GREEN); flex: 1; }
+
+        /* Ashoka Chakra Construction */
+        .ashoka-chakra {
+            height: calc(var(--STRIPE-HEIGHT) * 0.92);
+            width: calc(var(--STRIPE-HEIGHT) * 0.92);
+            border: calc(var(--STRIPE-HEIGHT) * 0.04) solid var(--NAVY-BLUE);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chakra-center {
+            width: calc(var(--STRIPE-HEIGHT) * 0.15);
+            height: calc(var(--STRIPE-HEIGHT) * 0.15);
+            background-color: var(--NAVY-BLUE);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .spoke {
+            position: absolute;
+            width: calc(var(--STRIPE-HEIGHT) * 0.03);
+            height: 100%;
+            background-color: var(--NAVY-BLUE);
+        }
+
+        /* Generate 24 spokes using a loop-like CSS structure */
+        .spoke:nth-child(1) { transform: rotate(0deg); }
+        .spoke:nth-child(2) { transform: rotate(15deg); }
+        .spoke:nth-child(3) { transform: rotate(30deg); }
+        .spoke:nth-child(4) { transform: rotate(45deg); }
+        .spoke:nth-child(5) { transform: rotate(60deg); }
+        .spoke:nth-child(6) { transform: rotate(75deg); }
+        .spoke:nth-child(7) { transform: rotate(90deg); }
+        .spoke:nth-child(8) { transform: rotate(105deg); }
+        .spoke:nth-child(9) { transform: rotate(120deg); }
+        .spoke:nth-child(10) { transform: rotate(135deg); }
+        .spoke:nth-child(11) { transform: rotate(150deg); }
+        .spoke:nth-child(12) { transform: rotate(165deg); }
+        .spoke:nth-child(13) { transform: rotate(180deg); }
+        .spoke:nth-child(14) { transform: rotate(195deg); }
+        .spoke:nth-child(15) { transform: rotate(210deg); }
+        .spoke:nth-child(16) { transform: rotate(225deg); }
+        .spoke:nth-child(17) { transform: rotate(240deg); }
+        .spoke:nth-child(18) { transform: rotate(255deg); }
+        .spoke:nth-child(19) { transform: rotate(270deg); }
+        .spoke:nth-child(20) { transform: rotate(285deg); }
+        .spoke:nth-child(21) { transform: rotate(300deg); }
+        .spoke:nth-child(22) { transform: rotate(315deg); }
+        .spoke:nth-child(23) { transform: rotate(330deg); }
+        .spoke:nth-child(24) { transform: rotate(345deg); }
+
+    </style>
+</head>
+<body>
+
+    <div class="flag">
+        <div class="saffron"></div>
+        <div class="white">
+            <div class="ashoka-chakra">
+                <div class="chakra-center"></div>
+                <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+                <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+                <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+                <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+                <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+                <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+                <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+                <div class="spoke"></div><div class="spoke"></div><div class="spoke"></div>
+            </div>
+        </div>
+        <div class="green"></div>
+    </div>
+
+</body>
+</html>
